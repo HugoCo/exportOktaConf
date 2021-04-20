@@ -34,7 +34,4 @@ jobs:
         with:
           fileName: 'exportConf.json'
           encodedString: ${{ steps.package.outputs.content }}
-          
-      - name: Some other step
-        with:
-          filelocation: ${{ steps.write_file.outputs.filePath }}
+
