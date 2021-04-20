@@ -47,7 +47,10 @@ jobs:
         env:
           FILE_NAME: "fileName.txt"
           FILE_DATA: "file content"
-
+          
+      - uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          commit_message: Apply b64 to json
     
       #- name: base64-to-file
        # uses: timheuer/base64-to-file@v1
