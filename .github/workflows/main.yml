@@ -27,13 +27,13 @@ jobs:
       - run: echo -n -e "HELLO\n !\n World!" > text.txt
 
       - uses: pCYSl5EDgo/cat@master
-        id: hello
+        id: export
         with:
-          path: text.txt
+          path: ./exportConf.json
 
       - run: echo $TEXT
         env:
-          TEXT: ${{ steps.hello.outputs.text }}
+          TEXT: ${{ steps.export.outputs.text }}
 
       - name: base64-to-file
         uses: timheuer/base64-to-file@v1
