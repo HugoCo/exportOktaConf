@@ -35,10 +35,16 @@ jobs:
       - run: echo $TEXT
         env:
           TEXT: ${{ steps.export.outputs.text }}
-
-      - name: base64-to-file
-        uses: timheuer/base64-to-file@v1
+      
+      - name: Restore firebase.json file
+        uses: kitek/decode-base64-into-file-action@1.0
         with:
-          fileName: 'exportConf.json'
-          encodedString: ${{ steps.hello.outputs.text }}
+          encoded-value: ${{ steps.export.outputs.text }}
+          destination-file: out.json
+    
+      #- name: base64-to-file
+       # uses: timheuer/base64-to-file@v1
+        #with:
+         # fileName: 'exportConf.json'
+          #encodedString: ${{ steps.hello.outputs.text }}
 
