@@ -24,14 +24,20 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       
-      - name: Read file
-        uses: juliangruber/read-file-action@v1.0.0
+      - run: echo -n -e "HELLO\n !\n World!" > text.txt
+
+      - uses: pCYSl5EDgo/cat@master
+        id: hello
         with:
-          path: ./exportConf.json
+          path: text.txt
+
+      - run: echo $TEXT
+        env:
+          TEXT: ${{ steps.hello.outputs.text }}
 
       - name: base64-to-file
         uses: timheuer/base64-to-file@v1
         with:
           fileName: 'exportConf.json'
-          encodedString: ${{ steps.package.outputs.content }}
+          encodedString: ${{ steps.hello.outputs.text }}
 
