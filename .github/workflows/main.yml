@@ -36,6 +36,5 @@ jobs:
           encodedString: ${{ steps.package.outputs.content }}
           
       - name: Some other step
-        uses: actions/someaction@master
         with:
           filelocation: ${{ steps.write_file.outputs.filePath }}
