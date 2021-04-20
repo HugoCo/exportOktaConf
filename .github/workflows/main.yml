@@ -27,7 +27,7 @@ jobs:
       - name: Read file
         uses: juliangruber/read-file-action@v1.0.0
         with:
-          path: exportConf.json
+          path: ./exportConf.json
 
       - name: base64-to-file
         uses: timheuer/base64-to-file@v1
