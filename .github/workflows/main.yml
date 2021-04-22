@@ -59,15 +59,26 @@ jobs:
           destination-file: MFAPolicies.json
           
       - uses: pCYSl5EDgo/cat@master
-        id: exportPasswordPolicies
+        id: exportGroups
         with:
-          path: ./PasswordPolicies.json
+          path: ./groups.json
       
-      - name: Decode PasswordPolicies
+      - name: Decode Groups
         uses: kitek/decode-base64-into-file-action@1.0
         with:
-          encoded-value: ${{ steps.exportPasswordPolicies.outputs.text }}
-          destination-file: PasswordPolicies.json
+          encoded-value: ${{ steps.exportGroups.outputs.text }}
+          destination-file: groups.json
+          
+      - uses: pCYSl5EDgo/cat@master
+        id: exportGroupRules
+        with:
+          path: ./groupRules.json
+      
+      - name: Decode groupRules
+        uses: kitek/decode-base64-into-file-action@1.0
+        with:
+          encoded-value: ${{ steps.exportGroupRules.outputs.text }}
+          destination-file: groupRules.json
           
       - uses: stefanzweifel/git-auto-commit-action@v4
         with:
