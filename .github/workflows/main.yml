@@ -26,16 +26,49 @@ jobs:
       - uses: actions/checkout@v2
 
       - uses: pCYSl5EDgo/cat@master
-        id: export
+        id: exportNetworkZones
         with:
-          path: ./exportConf.json
+          path: ./networkZones.json
       
-      - name: Restore firebase.json file
+      - name: Decode NetworkZones
         uses: kitek/decode-base64-into-file-action@1.0
         with:
-          encoded-value: ${{ steps.export.outputs.text }}
-          destination-file: out.json
+          encoded-value: ${{ steps.exportNetworkZones.outputs.text }}
+          destination-file: networkZones.json
+          
+      - uses: pCYSl5EDgo/cat@master
+        id: exportFeatures
+        with:
+          path: ./features.json
       
+      - name: Decode Features
+        uses: kitek/decode-base64-into-file-action@1.0
+        with:
+          encoded-value: ${{ steps.exportFeatures.outputs.text }}
+          destination-file: features.json
+          
+      - uses: pCYSl5EDgo/cat@master
+        id: exportMFAPolicies
+        with:
+          path: ./MFAPolicies.json
+      
+      - name: Decode MFAPolicies
+        uses: kitek/decode-base64-into-file-action@1.0
+        with:
+          encoded-value: ${{ steps.exportMFAPolicies.outputs.text }}
+          destination-file: MFAPolicies.json
+          
+      - uses: pCYSl5EDgo/cat@master
+        id: exportPasswordPolicies
+        with:
+          path: ./PasswordPolicies.json
+      
+      - name: Decode PasswordPolicies
+        uses: kitek/decode-base64-into-file-action@1.0
+        with:
+          encoded-value: ${{ steps.exportPasswordPolicies.outputs.text }}
+          destination-file: PasswordPolicies.json
+          
       - uses: stefanzweifel/git-auto-commit-action@v4
         with:
           commit_message: Apply b64 to json
