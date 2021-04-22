@@ -80,6 +80,16 @@ jobs:
           encoded-value: ${{ steps.exportGroupRules.outputs.text }}
           destination-file: groupRules.json
           
+      - uses: pCYSl5EDgo/cat@master
+        id: exportSignOnPolicies
+        with:
+          path: ./signOnPolicies.json
+      
+      - name: Decode signOnPolicies
+        uses: kitek/decode-base64-into-file-action@1.0
+        with:
+          encoded-value: ${{ steps.exportSignOnPolicies.outputs.text }}
+          destination-file: signOnPolicies.json    
       - uses: stefanzweifel/git-auto-commit-action@v4
         with:
           commit_message: Apply b64 to json
