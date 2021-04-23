@@ -89,7 +89,30 @@ jobs:
         uses: kitek/decode-base64-into-file-action@1.0
         with:
           encoded-value: ${{ steps.exportSignOnPolicies.outputs.text }}
-          destination-file: signOnPolicies.json    
+          destination-file: signOnPolicies.json
+          
+      - uses: pCYSl5EDgo/cat@master
+        id: exportUserRolesAdmin
+        with:
+          path: ./userRolesAdmin.json
+      
+      - name: Decode userRolesAdmin
+        uses: kitek/decode-base64-into-file-action@1.0
+        with:
+          encoded-value: ${{ steps.exportUserRolesAdmin.outputs.text }}
+          destination-file: userRolesAdmin.json
+          
+      - uses: pCYSl5EDgo/cat@master
+        id: exportGroupAdmin
+        with:
+          path: ./groupAdmin.json
+      
+      - name: Decode groupAdmin
+        uses: kitek/decode-base64-into-file-action@1.0
+        with:
+          encoded-value: ${{ steps.exportGroupAdmin.outputs.text }}
+          destination-file: groupAdmin.json
+          
       - uses: stefanzweifel/git-auto-commit-action@v4
         with:
           commit_message: Apply b64 to json
