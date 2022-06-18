@@ -1,7 +1,7 @@
 {
   "type": "flopack",
   "version": "1.3.0",
-  "created": "2022-06-17T16:00:15.734Z",
+  "created": "2022-06-18T16:00:15.196Z",
   "flags": {
     "auto-transform": true,
     "looseBooleans": true,
@@ -10,13 +10,13 @@
   },
   "data": {
     "flos": {
-      "44b4e786-2a19-430e-8cba-76adb4c3679c": {
-        "id": "44b4e786-2a19-430e-8cba-76adb4c3679c",
+      "9796d9c8-1e62-4f72-834a-ca89f1bd5a54": {
+        "id": "9796d9c8-1e62-4f72-834a-ca89f1bd5a54",
         "name": "test {{",
         "description": "",
         "data": {
           "id": null,
-          "uuid": "44b4e786-2a19-430e-8cba-76adb4c3679c",
+          "uuid": "9796d9c8-1e62-4f72-834a-ca89f1bd5a54",
           "display": {
             "preview": [
               {
@@ -183,7 +183,7 @@
                       }
                     }
                   },
-                  "config": "18410d10-f4ee-4424-b161-a114a18e333a",
+                  "config": "a3677f7d-60b1-4b2e-9fb2-427c26a337ed",
                   "partnerChannelKeys": 54,
                   "inputs": {
                     "extensible": false,
@@ -389,7 +389,7 @@
           "log": true,
           "inheritLog": true,
           "scheduled": false,
-          "group": "f66a285b-eaa8-48c4-a4c1-97bf639f98d4",
+          "group": "4a0f26fb-1452-4953-b8ee-6ddfefa62ae2",
           "templateName": null,
           "connector_method_meta": {
             "inputs": {},
@@ -401,8 +401,8 @@
       }
     },
     "configs": {
-      "18410d10-f4ee-4424-b161-a114a18e333a": {
-        "id": "18410d10-f4ee-4424-b161-a114a18e333a",
+      "a3677f7d-60b1-4b2e-9fb2-427c26a337ed": {
+        "id": "a3677f7d-60b1-4b2e-9fb2-427c26a337ed",
         "name": "Okta",
         "module": "okta",
         "data": null
@@ -410,8 +410,8 @@
     },
     "tables": {},
     "groups": {
-      "f66a285b-eaa8-48c4-a4c1-97bf639f98d4": {
-        "id": "f66a285b-eaa8-48c4-a4c1-97bf639f98d4",
+      "4a0f26fb-1452-4953-b8ee-6ddfefa62ae2": {
+        "id": "4a0f26fb-1452-4953-b8ee-6ddfefa62ae2",
         "data": {
           "name": "iwao",
           "description": "",
@@ -420,5 +420,5 @@
       }
     }
   },
-  "checksum": "12fb04e22fea184bda01e6ad2d4e8a920364ba17411f1d66c3a13d80e1b1c338"
+  "checksum": "99c6703c09fc4cc028a8c4b28f3468c5596af4e9c5cd09d13165cebef81dbacc"
 }
